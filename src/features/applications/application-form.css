@@ -1,0 +1,183 @@
+.application-modal-backdrop {
+  position: fixed;
+  z-index: 60;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 24px;
+  background: rgba(20, 35, 28, 0.48);
+}
+
+.application-dialog {
+  width: min(100%, 580px);
+  max-height: min(92vh, 760px);
+  overflow-y: auto;
+  padding: 25px;
+  border: 1px solid #e3e8e2;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(22, 39, 30, 0.2);
+}
+
+.application-dialog-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.application-form-eyebrow {
+  margin: 0 0 5px;
+  color: #718079;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.application-dialog-heading h2 {
+  margin: 0;
+  color: #1e2e27;
+  font-size: 20px;
+}
+
+.application-dialog-close {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  place-items: center;
+  margin: -5px -5px 0 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  color: #748178;
+  cursor: pointer;
+}
+
+.application-dialog-close:hover {
+  border-color: #e0e6df;
+  background: #f1f5f0;
+  color: #324d3e;
+}
+
+.application-dialog-close:focus-visible,
+.application-cancel-button:focus-visible,
+.application-save-button:focus-visible {
+  outline: 2px solid #6b16c4;
+  outline-offset: 2px;
+}
+
+.application-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.application-form-grid label {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+  color: #46574d;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.application-form-grid input,
+.application-form-grid select,
+.application-form-grid textarea {
+  width: 100%;
+  min-height: 42px;
+  padding: 9px 11px;
+  border: 1px solid #d9e1da;
+  border-radius: 5px;
+  outline: none;
+  background: #fff;
+  color: #263a30;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.application-form-grid textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.application-form-grid input:focus,
+.application-form-grid select:focus,
+.application-form-grid textarea:focus {
+  border-color: #7b9a86;
+  box-shadow: 0 0 0 3px rgba(71, 115, 94, 0.1);
+}
+
+.form-field-wide {
+  grid-column: 1 / -1;
+}
+
+.application-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid #e7ebe6;
+}
+
+.application-cancel-button,
+.application-save-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 14px;
+  border: 1px solid #dce4dc;
+  border-radius: 6px;
+  background: #fff;
+  color: #40564b;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.application-save-button {
+  border-color: #6b16c4;
+  background: #6b16c4;
+  color: #fff;
+}
+
+.application-save-button:hover:not(:disabled) {
+  border-color: #5610a4;
+  background: #5610a4;
+}
+
+.application-save-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+@media (max-width: 560px) {
+  .application-modal-backdrop {
+    align-items: end;
+    padding: 0;
+  }
+
+  .application-dialog {
+    width: 100%;
+    max-height: 92svh;
+    padding: 22px 18px calc(18px + env(safe-area-inset-bottom));
+    border-radius: 8px 8px 0 0;
+  }
+
+  .application-form-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .form-field-wide {
+    grid-column: auto;
+  }
+}

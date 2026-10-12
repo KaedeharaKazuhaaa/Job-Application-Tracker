@@ -1,0 +1,39 @@
+.app-layout-shell {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.app-layout-main {
+  min-height: 100vh;
+  margin-left: 252px;
+  overflow-x: clip;
+  background: #fff;
+}
+
+.app-layout-backdrop {
+  display: none;
+}
+
+.app-layout-loading {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  background: #fff;
+  color: #53665a;
+  font-size: 14px;
+}
+
+@media (max-width: 760px) {
+  .app-layout-main {
+    margin-left: 0;
+  }
+
+  .app-layout-backdrop {
+    position: fixed;
+    z-index: 35;
+    inset: 0;
+    display: block;
+    border: 0;
+    background: rgba(17, 32, 25, 0.38);
+  }
+}

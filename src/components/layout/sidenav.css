@@ -1,0 +1,173 @@
+.side-nav {
+  position: fixed;
+  z-index: 40;
+  inset: 0 auto 0 0;
+  display: flex;
+  width: 252px;
+  flex-direction: column;
+  padding: 26px 17px 18px;
+  border-right: 1px solid #e4e8e4;
+  background: #fff;
+  color: #25332c;
+}
+
+.side-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 42px;
+  margin: 0 8px 44px;
+}
+
+.side-nav-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  place-items: center;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.side-nav-mark img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.side-nav-brand-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.side-nav-brand-copy strong {
+  color: #25332c;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.side-nav-brand-copy small {
+  color: #858f88;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.side-nav-close {
+  display: none;
+  margin-left: auto;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.side-nav-section-label {
+  margin: 0 11px 12px;
+  color: #858f88;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.side-nav-links {
+  display: grid;
+  gap: 5px;
+}
+
+.side-nav-links a,
+.side-nav-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #64726a;
+  font: inherit;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.side-nav-links a:hover,
+.side-nav-logout:hover {
+  background: #f7f3fa;
+  color: #351b49;
+}
+
+.side-nav-links a.active {
+  background: #f0e8f8;
+  color: #4e1878;
+}
+
+.side-nav-links a svg,
+.side-nav-logout svg,
+.side-nav-close svg {
+  color: #6b16c4;
+}
+
+.side-nav-spacer {
+  flex: 1;
+}
+
+.side-nav-account {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 9px 12px;
+  border-top: 1px solid #e7ebe7;
+}
+
+.side-nav-avatar {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #f0e8f8;
+  color: #6b16c4;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.side-nav-account-email {
+  overflow: hidden;
+  color: #536259;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.side-nav-logout {
+  width: 100%;
+}
+
+.side-nav-close:focus-visible,
+.side-nav-links a:focus-visible,
+.side-nav-logout:focus-visible {
+  outline: 2px solid #6b16c4;
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .side-nav {
+    width: min(290px, calc(100vw - 48px));
+    transform: translateX(-105%);
+    transition: transform 180ms ease;
+  }
+
+  .side-nav.is-open {
+    transform: translateX(0);
+  }
+
+  .side-nav-close {
+    display: grid;
+    place-items: center;
+  }
+}
